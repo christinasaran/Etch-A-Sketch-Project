@@ -1,0 +1,42 @@
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+  }
+
+  .center{
+    text-align: center;
+    padding-bottom: 10px;
+  }
+ 
+  
+  #container {
+    position: fixed;
+    /* center the element */
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    /* give it dimensions */
+    min-height: 10em;
+    max-width: 900px;
+
+    display: grid;
+    /* grid-gap: 1em; */
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+
+    height: 800px;
+    border-style: inset ;
+  }
+  
+  h1{ 
+    color: midnightblue;
+  }
+
+  button {
+  background: palegoldenrod;
+  color: midnightblue;
+  padding: .5em;
+    margin-bottom: 2em;
+
+ }
