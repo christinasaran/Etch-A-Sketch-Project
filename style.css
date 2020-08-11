@@ -5,11 +5,13 @@
 
   .center{
     text-align: center;
+    margin-top: 7em;
     padding-bottom: 10px;
   }
  
   
   #container {
+    
     position: fixed;
     /* center the element */
     right: 0;
@@ -25,18 +27,39 @@
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
 
-    height: 800px;
+    height: 78%;
     border-style: inset ;
   }
   
   h1{ 
+    text-align: center;
+    position: absolute;
+  top: 0px;
+  right: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  padding-bottom: 1rem;
+
+    width: 100%;
     color: midnightblue;
+    font-family: 'Lemonada', cursive;
+
+    background: rgb(238, 226, 255);
+	  border-bottom: 7px solid midnightblue
   }
 
   button {
-  background: palegoldenrod;
+    font-family: Georgia;
+    background: rgb(238, 226, 255);
   color: midnightblue;
-  padding: .5em;
-    margin-bottom: 2em;
+  padding: .7em;
+  margin-right: 10px;
+  margin-bottom: 2em;
+    border-radius: 10px;
+    line-height: 1.2rem;
+    box-shadow: 1px 2.5px #888888;
+ }
 
+ button:hover{
+   transform: scale(1.05);
  }

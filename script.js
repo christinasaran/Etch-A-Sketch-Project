@@ -1,7 +1,9 @@
 const container = document.getElementById('container');
 const btnClear = document.getElementById('btnClear');
 const btnAll = document.getElementById('btnAll');
+const rainbow = document.getElementById('rainbow');
 
+let rainbowBool = false;
 
 function makeRows(row, col){
       container.style.setProperty('--grid-rows', row);
@@ -18,9 +20,14 @@ function makeRows(row, col){
 let squares = document.getElementsByClassName('grid-item');
 //console.log(squares);
 
-function color (color = 'orange' ){
+function color (color = 'black' ){
    for(let i = 0; i < squares.length; i++){
       squares[i].addEventListener('mouseenter', e => {
+
+         if(rainbowBool){
+            let temp = randomColour();
+            e.target.style.backgroundColor = temp;
+         } else 
          //console.log(e.target.className);
          e.target.style.backgroundColor = color;
       });
@@ -31,6 +38,7 @@ function clear(){
    for (let i = squares.length - 1; i >= 0; --i) {
       squares[i].remove();
     }
+    rainbowBool = false;
 
 } 
 
@@ -45,13 +53,28 @@ function clear(){
       if colourful
       new xyz, and rgb
 */
-btnAll.addEventListener('click', e => {
-   let x = Math.floor(Math.random() * 256);
-   let y = Math.floor(Math.random() * 256);
-   let z = Math.floor(Math.random() * 256);
+function randomColour(){
+   let x = Math.floor((Math.random() * 256) +1);
+   let y = Math.floor((Math.random() * 256 +1));
+   let z = Math.floor((Math.random() * 256)+1);
 
-   let random = `rgb( ${x},${y},${z} )`;
-   color(random)
+   return random = `rgb( ${x},${y},${z} )`;
+}
+
+rainbow.addEventListener('click', e => {
+   rainbowBool=  true;
+   color();
+});
+
+btnAll.addEventListener('click', e => {
+   // let x = Math.floor(Math.random() * 256);
+   // let y = Math.floor(Math.random() * 256);
+   // let z = Math.floor(Math.random() * 256);
+
+   // let random = `rgb( ${x},${y},${z} )`;
+   rainbowBool= false;
+   let newColor = randomColour();
+   color(newColor);
 
 });
 
